@@ -11,9 +11,8 @@ const Card = ({ occasion, toggle, setToggle, setOccasion }) => {
 
   const handleButtonClick = async () => {
     setIsLoading(true);
-    // Realiza cualquier acción asincrónica aquí, como una llamada a una API o una transacción de Ethereum
-
-    // Ejemplo de espera simulada de 2 segundos
+    // Perform any asynchronous action here, such as an API call or an Ethereum transaction
+    // Example of simulated 2 second wait
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
     setIsLoading(false);
@@ -40,11 +39,6 @@ const Card = ({ occasion, toggle, setToggle, setOccasion }) => {
         width: '500px',
         height: '300px',
         display: 'inline-block',
-        
-        
-
-      
-       // Cambiado a 'center'
         background: 'linear-gradient(to right, #685e68, #f8cd82)'
       }}
     >
@@ -88,43 +82,43 @@ const Card = ({ occasion, toggle, setToggle, setOccasion }) => {
             padding: '20px',
             fontWeight: 'bold',
             display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          margin: '0 auto'
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0 auto'
           }}
-         
+
         >
           Sold Out
         </button>
       ) : (
         <button
-        type='button'
-        className='card__button'
-        onClick={() => handleButtonClick()}
-        disabled={isLoading}
-        style={{
-          border: '7px solid #fff',
-          borderRadius: '20px',
-          padding: '20px',
-          fontWeight: 'bold',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          margin: '0 auto' // Agregado para centrar horizontalmente
-        }}
-        onMouseEnter={(e) => {
-          e.target.style.background = 'linear-gradient(to right, #f8cd82,#f8cd82)';
-        }}
-        onMouseLeave={(e) => {
-          e.target.style.background = 'linear-gradient(to right, #685e68, #685e68)';
-        }}
-      >
-        {isLoading ? (
-          <div className='spinner' style={{ borderTopColor: '#000' }} />
-        ) : (
-          'Buy Tickets'
-        )}
-      </button>
+          type='button'
+          className='card__button'
+          onClick={() => handleButtonClick()}
+          disabled={isLoading}
+          style={{
+            border: '7px solid #fff',
+            borderRadius: '20px',
+            padding: '20px',
+            fontWeight: 'bold',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0 auto'
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.background = 'linear-gradient(to right, #f8cd82,#f8cd82)';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.background = 'linear-gradient(to right, #685e68, #685e68)';
+          }}
+        >
+          {isLoading ? (
+            <div className='spinner' style={{ borderTopColor: '#000' }} />
+          ) : (
+            'Buy Tickets'
+          )}
+        </button>
       )}
     </div>
   );

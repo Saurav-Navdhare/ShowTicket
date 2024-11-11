@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-
+import axios from 'axios'
 // Import Components
 import Seat from './Seat'
 
@@ -16,13 +16,30 @@ const SeatChart = ({ occasion, tokenMaster, provider, setToggle }) => {
   }
 
   const buyHandler = async (_seat) => {
+    console.log(seatsTaken, "\n", _seat)
+    if (seatsTaken[_seat]) {
+      return
+    }
+
     setHasSold(false)
 
     const signer = await provider.getSigner()
     const transaction = await tokenMaster.connect(signer).mint(occasion.id, _seat, { value: occasion.cost })
     await transaction.wait()
-
     setHasSold(true)
+    // push to backend for seat retrieval
+    const data = {
+      address: await signer.getAddress(),
+      occasionId: occasion.id,
+      seatNumber: _seat
+    }
+
+    try {
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/ticket`, data)
+      console.log(response.data)
+    } catch (error) {
+      console.log(error)
+    }
   }
   /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {

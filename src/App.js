@@ -94,9 +94,9 @@ function App() {
         >
           <strong>Cinema</strong>🎬Theatre
         </h2>
-        
+
       </header>
-   
+
 
       <div className="cards">
         {occasions.map((occasion, index) => (
@@ -124,7 +124,7 @@ function App() {
             >
               Botón
             </button>
-            
+
           </Card>
         ))}
       </div>
@@ -137,17 +137,18 @@ function App() {
           setToggle={setToggle}
         />
       )}
-         <footer style={{ textAlign: "center", marginTop: "20px" }}>
-  <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-    <a href="https://github.com/querylab" target="_blank" rel="noopener noreferrer">
-      <img src="https://repository-images.githubusercontent.com/322583197/e7958f30-5dcf-4101-9f18-63aa08a338bb"  width={40} alt="GitHub" />
-    </a>
-    <p style={{ fontWeight: "bold", marginTop: "10px" }}>Made with ❤️ by querylab</p>
-  </div>
+      <footer style={{ textAlign: "center", marginTop: "20px" }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <a href="https://github.com/querylab" target="_blank" rel="noopener noreferrer">
+            <img src="https://repository-images.githubusercontent.com/322583197/e7958f30-5dcf-4101-9f18-63aa08a338bb" width={40} alt="GitHub" />
+          </a>
+          <p style={{ fontWeight: "bold", marginTop: "10px" }}>Made with ❤️ by querylab</p>
+        </div>
 
-</footer>
+      </footer>
     </div>
-    
+
+
   );
 }
 

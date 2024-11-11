@@ -19,10 +19,17 @@ contract CinemaTicket is ERC721 {
         string location;
     }
 
+    struct Seat {
+        uint256 seat;
+        address owner;
+        uint256 occasionId;
+    }
+
     mapping(uint256 => Occasion) occasions;
     mapping(uint256 => mapping(address => bool)) public hasBought;
     mapping(uint256 => mapping(uint256 => address)) public seatTaken;
     mapping(uint256 => uint256[]) seatsTaken;
+    mapping(address => uint256[]) public accountTickets;
 
     modifier onlyOwner() {
         require(msg.sender == owner);
@@ -63,11 +70,11 @@ contract CinemaTicket is ERC721 {
         require(_id <= totalOccasions);
 
         // Require that ETH sent is greater than cost...
-        require(msg.value >= occasions[_id].cost);
+        require(msg.value >= occasions[_id].cost, "Not enough ETH sent");
 
         // Require that the seat is not taken, and the seat exists...
-        require(seatTaken[_id][_seat] == address(0));
-        require(_seat <= occasions[_id].maxTickets);
+        require(seatTaken[_id][_seat] == address(0), "Seat is taken");
+        require(_seat <= occasions[_id].maxTickets, "Seat does not exist");
 
         occasions[_id].tickets -= 1; // <-- Update ticket count
 
@@ -93,4 +100,5 @@ contract CinemaTicket is ERC721 {
         (bool success, ) = owner.call{value: address(this).balance}("");
         require(success);
     }
+
 }
