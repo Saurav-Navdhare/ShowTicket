@@ -1,6 +1,6 @@
-# CinemaTicket-Blockchain 🎟️🎬🎥
+# ShowTicket-Blockchain 🎟️🎬🎥
 
-Cinema is an innovative ticketing app that uses blockchain technology to offer you a unique experience. You can select your seat and buy movie tickets at your nearest Cinema Theatre. Cinema brings you transparency in every transaction. In addition, ReactJS integration and MetaMask wallet ensure an attractive user interface and secure transactions.
+ShowTicket is an innovative ticketing app that uses blockchain technology to offer you a unique experience. You can select your seat and buy show tickets. ShowTicket brings you transparency in every transaction. In addition, ReactJS integration and MetaMask wallet ensure an attractive user interface and secure transactions.
 
 
 ## Setting Up
@@ -10,7 +10,7 @@ Cinema is an innovative ticketing app that uses blockchain technology to offer y
 ## 2. Install dependencies
 
 ```bash
-$ cd CinemaTicket-Blockchain
+$ cd ShowTicket
 $ npm install --save-dev hardhat
 $ npm install --save-dev @nomicfoundation/hardhat-toolbox
 ```

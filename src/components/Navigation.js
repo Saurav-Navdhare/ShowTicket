@@ -34,7 +34,7 @@ const Navigation = ({ account, setAccount }) => {
     // <nav style={backgroundImageStyle}>
     <nav>
       <div className="nav__brand">
-        <h1>Cinema Theatre</h1>
+        <h1>ShowTicket</h1>
 
         {/* <input className="nav__search" type="text" placeholder="Search Movies" /> */}
 
