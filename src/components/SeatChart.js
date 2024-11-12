@@ -27,12 +27,6 @@ const SeatChart = ({ occasion, tokenMaster, provider, setToggle }) => {
     const transaction = await tokenMaster.connect(signer).mint(occasion.id, _seat, { value: occasion.cost })
     await transaction.wait()
     setHasSold(true)
-    // push to backend for seat retrieval
-    const data = {
-      address: await signer.getAddress(),
-      occasionId: occasion.id,
-      seatNumber: _seat
-    }
 
     try {
       const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/ticket`, data)

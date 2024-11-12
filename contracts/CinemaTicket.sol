@@ -29,7 +29,6 @@ contract CinemaTicket is ERC721 {
     mapping(uint256 => mapping(address => bool)) public hasBought;
     mapping(uint256 => mapping(uint256 => address)) public seatTaken;
     mapping(uint256 => uint256[]) seatsTaken;
-    mapping(address => uint256[]) public accountTickets;
 
     modifier onlyOwner() {
         require(msg.sender == owner);

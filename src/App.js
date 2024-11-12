@@ -82,7 +82,7 @@ function App() {
       >
         <Navigation account={account} setAccount={setAccount} />
 
-        <h2
+        {/* <h2
           className="header__title"
           style={{
             background: `linear-gradient(to right, ${titleColor}, ${titleColor})`,
@@ -93,7 +93,7 @@ function App() {
           }}
         >
           <strong>Cinema</strong>🎬Theatre
-        </h2>
+        </h2> */}
 
       </header>
 
@@ -119,10 +119,10 @@ function App() {
                 marginRight: 'auto',
               }}
               onClick={() => {
-                // Lógica del botón
+                // Logic of Button
               }}
             >
-              Botón
+              Button
             </button>
 
           </Card>
@@ -139,10 +139,10 @@ function App() {
       )}
       <footer style={{ textAlign: "center", marginTop: "20px" }}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <a href="https://github.com/querylab" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/Saurav-Navdhare" target="_blank" rel="noopener noreferrer">
             <img src="https://repository-images.githubusercontent.com/322583197/e7958f30-5dcf-4101-9f18-63aa08a338bb" width={40} alt="GitHub" />
           </a>
-          <p style={{ fontWeight: "bold", marginTop: "10px" }}>Made with ❤️ by querylab</p>
+          <p style={{ fontWeight: "bold", marginTop: "10px" }}>Made with ❤️ by Saurav Navdhare</p>
         </div>
 
       </footer>

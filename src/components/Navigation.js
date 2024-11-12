@@ -1,28 +1,28 @@
 import { ethers } from 'ethers';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 
 const Navigation = ({ account, setAccount }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const imageUrls = [
-    'https://i.imgur.com/J1TFzXj.png',
-    'https://i.imgur.com/TYt9qkr.png',
-    'https://i.imgur.com/rVRv37m.png',
-    // Agrega aquí más URLs de imágenes
-  ];
+  // const [currentIndex, setCurrentIndex] = useState(0);
+  // const imageUrls = [
+  //   'https://i.imgur.com/J1TFzXj.png',
+  //   'https://i.imgur.com/TYt9qkr.png',
+  //   'https://i.imgur.com/rVRv37m.png',
+  //   // Agrega aquí más URLs de imágenes
+  // ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % imageUrls.length);
-    }, 2000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentIndex((prevIndex) => (prevIndex + 1) % imageUrls.length);
+  //   }, 2000);
 
-    return () => clearInterval(interval);
-  }, );
+  //   return () => clearInterval(interval);
+  // },);
 
-  const backgroundImageStyle = {
-    backgroundImage: `url('${imageUrls[currentIndex]}')`,
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat',
-  };
+  // const backgroundImageStyle = {
+  //   backgroundImage: `url('${imageUrls[currentIndex]}')`,
+  //   backgroundSize: 'contain',
+  //   backgroundRepeat: 'no-repeat',
+  // };
 
   const connectHandler = async () => {
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
@@ -31,11 +31,12 @@ const Navigation = ({ account, setAccount }) => {
   };
 
   return (
-    <nav style={backgroundImageStyle}>
+    // <nav style={backgroundImageStyle}>
+    <nav>
       <div className="nav__brand">
         <h1>Cinema Theatre</h1>
 
-        <input className="nav__search" type="text" placeholder="Search Movies" />
+        {/* <input className="nav__search" type="text" placeholder="Search Movies" /> */}
 
         <ul className="nav__links">
           <li>
