@@ -26,7 +26,7 @@ contract CinemaTicket is ERC721 {
     }
 
     mapping(uint256 => Occasion) occasions;
-    mapping(uint256 => mapping(address => bool)) public hasBought;
+    // mapping(uint256 => mapping(address => bool)) public hasBought;
     mapping(uint256 => mapping(uint256 => address)) public seatTaken;
     mapping(uint256 => uint256[]) seatsTaken;
 
@@ -77,7 +77,7 @@ contract CinemaTicket is ERC721 {
 
         occasions[_id].tickets -= 1; // <-- Update ticket count
 
-        hasBought[_id][msg.sender] = true; // <-- Update buying status
+        // hasBought[_id][msg.sender] = true; // <-- Update buying status
         seatTaken[_id][_seat] = msg.sender; // <-- Assign seat
 
         seatsTaken[_id].push(_seat); // <-- Update seats currently taken
